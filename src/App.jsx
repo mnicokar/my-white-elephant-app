@@ -1,17 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Authentication from './components/Authentication'
+import React, { useContext } from 'react';
+import "./App.css";
+import AuthContext from './context/AuthContext';
+import LoginPage from "./pages/LoginPage";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { user } = useContext(AuthContext);
+
 
   return (
     <div>
-      <Authentication/>
+      {user ? (
+        // User is signed in
+        <div>
+          <p>Welcome, {user.displayName}!</p>
+          {/* ... other components for authenticated users ... */}
+        </div>
+      ) : (
+        // User is not signed in
+        <LoginPage />
+      )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
