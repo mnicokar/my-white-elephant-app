@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { auth } from '../firebase'; // If you haven't already imported it
+import { auth } from '../firebase'; 
+import './Authentication.css'; // Import the CSS file
 
 function Authentication() {
   const [user, setUser] = useState(null); // To store user data after sign-in
@@ -23,7 +24,7 @@ function Authentication() {
       {user ? (
         <p>Welcome, {user.displayName}!</p>
       ) : (
-        <button onClick={handleGoogleSignIn}>Sign in with Google</button>
+        <button className='google-sign-in-button' onClick={handleGoogleSignIn}>Sign in with Google</button>
       )}
     </div>
   );
