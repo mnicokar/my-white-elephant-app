@@ -4,6 +4,9 @@ import AuthContext from "../context/AuthContext";
 import SignOutButton from "../components/SignOut";
 import "./HomePage.css";
 
+import RegisterItem from "./RegisterItem";
+
+
 const HomePage = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -27,6 +30,7 @@ const HomePage = () => {
           Create a Game
         </div>
       </div>
+      <SignOutButton/>
     </div>
   );
 };
