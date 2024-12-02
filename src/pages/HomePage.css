@@ -1,31 +1,52 @@
 /* HomePage.css */
 
-p {
-  font-size: 40px;
-}
+
 .home-page {
-  /* New class to wrap the entire content */
   display: flex;
-  flex-direction: column; /* Align items vertically */
-  align-items: center; /* Center horizontally */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  min-height: 100vh;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 .home-page-options {
   display: flex;
   justify-content: space-around;
-  width: 80%; /* Adjust width as needed */
-  margin-top: 20px; /* Add some space above the options */
+  width: 80%;
+
 }
 
 .home-page-option {
   background-color: white;
-  padding: 60px;
+  padding: 20px; 
   border-radius: 45px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   color: var(--text-color);
-  font-size: larger;
-  flex: 1;
-  margin: 0 10px;
-  text-align: center; /* Center the text within each option */
+  font-size: 25px;
+  width: 300px; /* Add this */
+  margin: 10px;
+  text-align: center;
+}
+
+.home-page-option:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .home-page-options {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .home-page-option {
+    flex: 1 0 100%; /* Take full width on smaller screens */
+    margin-bottom: 20px; 
+  }
 }

@@ -1,32 +1,32 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import AuthContext from "../context/AuthContext";
 import SignOutButton from "../components/SignOut";
 import "./HomePage.css";
 
 const HomePage = () => {
-  // Renamed to HomePage
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleRegisterItem = () => navigate('/register-item');
+  const handleJoinGame = () => navigate('/join-game');
+  const handleCreateGame = () => navigate('/create-game');
 
   return (
     <div className="home-page">
-      <p>Welcome, {user.displayName}!</p>
-
-      <h2>What do you want to do?</h2>
+      <h1>Welcome, {user.displayName}!</h1>
 
       <div className="home-page-options">
-        {/* Added the container div */}
-        <div className="home-page-option">
-          <Link to="/register-item">Register an Item</Link>
+        <div className="home-page-option" onClick={handleRegisterItem}> 
+          Register an Item 
         </div>
-        <div className="home-page-option">
-          <Link to="/join-game">Join a Game</Link>
+        <div className="home-page-option" onClick={handleJoinGame}>
+          Join a Game
         </div>
-        <div className="home-page-option">
-          <Link to="/create-game">Create a Game</Link>
+        <div className="home-page-option" onClick={handleCreateGame}>
+          Create a Game
         </div>
       </div>
-
     </div>
   );
 };
