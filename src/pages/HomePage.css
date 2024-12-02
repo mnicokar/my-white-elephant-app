@@ -1,0 +1,31 @@
+/* HomePage.css */
+
+p {
+  font-size: 40px;
+}
+.home-page {
+  /* New class to wrap the entire content */
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center;
+}
+
+.home-page-options {
+  display: flex;
+  justify-content: space-around;
+  width: 80%; /* Adjust width as needed */
+  margin-top: 20px; /* Add some space above the options */
+}
+
+.home-page-option {
+  background-color: white;
+  padding: 60px;
+  border-radius: 45px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  font-size: larger;
+  flex: 1;
+  margin: 0 10px;
+  text-align: center; /* Center the text within each option */
+}
